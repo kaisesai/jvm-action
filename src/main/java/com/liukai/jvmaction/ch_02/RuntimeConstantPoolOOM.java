@@ -14,6 +14,22 @@ public class RuntimeConstantPoolOOM {
 
   public static void main(String[] args) {
     // 使用 list 保持着常量池引用，避免 Full GC 回收常量池行为
+    // runtimeConstantPoolOOM();
+
+    // 测试字符串的 intern 方法在常量池的表现
+    compareStringInternForConstantPool();
+
+  }
+
+  private static void compareStringInternForConstantPool() {
+    String str1 = new StringBuilder().append("计算机").append("软件").toString();
+    System.out.println(str1.intern() == str1);
+
+    String str2 = new StringBuilder().append("ja").append("va").toString();
+    System.out.println(str2.intern() == str2);
+  }
+
+  private static void runtimeConstantPoolOOM() {
     List<String> list = new ArrayList<>();
     int i = 0;
     while (true) {
