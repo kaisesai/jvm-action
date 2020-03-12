@@ -47,6 +47,7 @@ public class DirectMemoryOOM {
    *
    * @throws IllegalAccessException
    */
+  @SuppressWarnings(value = "unchecked")
   private static void directMemoryOOMFromUnsafe() throws IllegalAccessException {
     Field unsafeField = Unsafe.class.getDeclaredFields()[0];
     unsafeField.setAccessible(true);// 设置访问权限
