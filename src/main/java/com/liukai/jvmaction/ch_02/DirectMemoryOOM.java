@@ -13,6 +13,7 @@ import java.util.List;
  * VM Args: -Xmx20M -XX:MaxDirectMemorySize=10M
  * </p>
  */
+@SuppressWarnings(value = "unchecked")
 public class DirectMemoryOOM {
 
   private static final int _1MB = 1024 * 1024 * 1024;
